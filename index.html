@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Landing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&amp;display=swap" rel="stylesheet">
+
+    <!--google fonts link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <style>
+        *
+        {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            
+            list-style: none;
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        header
+        {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            align-items:center;
+            justify-content: space-between; /*met l'espacement des elements du menu*/
+            background: white;
+            transition: all ease .45s;
+            padding: 32px 15%; /*met de l'indentation en haut a gauche et a droite*/
+        }
+
+        body
+        {
+            background-color: white;
+        }
+
+        /* Liste de liens de navigation */
+        .navbar
+        {
+            display: flex; /*aligne horizontalement le menu de navigation*/
+            margin-left: 95px;
+        }
+
+        .navbar a
+        {
+            font-weight: 500;
+            color: var(--text-color);
+            margin: 0 25px;/*espacement entre elements du menu*/
+            transition: all ease .50s;
+        }
+
+        .navbar a:hover
+        {
+            color: purple;
+        }
+
+        .navbar a.active
+        {
+            color: purple;
+        }
+
+        #button {
+            color: white;
+            background-color: purple;
+            border: none;
+            padding: 20px 25px;
+            cursor: pointer;
+        }
+        #SN{
+            padding: 15px 25px;
+            font-size: 20px;
+            background-color: white;
+            border: rgba(147, 144, 144, 0.956) solid 2px;
+            margin-left: 50px;
+        }
+        .pp {
+            font-weight: bold;
+            font-size: 40px;
+            margin-left: 50px;
+            margin-top: 200px;
+        }
+        .p2{
+            font-size:20px;
+            margin-left: 50px;
+        }
+        #hd{
+            color: purple;
+            background-color: white;
+            border: white solid 2px;
+            padding: 20px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: -90px;
+            margin-left: 290px;
+            position: absolute;
+        }
+        #hd:hover
+        {
+            background-color: black;
+            color: white;
+            border: black solid 2px;
+        }
+        #register 
+        {
+            color: purple;
+            background-color: white;
+            border: purple solid 2px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-left: 200px;
+            margin-top: 25px;
+        }
+        #register:hover 
+        {
+            background-color: purple;
+            color: white;
+        }
+        .im1{
+            margin-left: 25px;
+        }
+        header 
+        {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px; /* Ajouter un espacement intérieur */
+        }
+        section {
+            margin-top: 20px;
+        }
+        .banner{
+            height: 450px;
+            margin-left: 600px;
+            margin-top: -360px;
+        }
+        .div1{
+            text-align: center;
+        }
+        .qf{
+            color: purple;
+            font-size: 20px;
+        }
+        .mef{
+            font-weight: bold;
+            font-size: 35px;
+        }
+        #sec1{
+            
+        }
+        footer{
+            text-align: center;
+        }
+        
+        #ppp{
+            margin-left: 50px;
+            margin-bottom: -40px;
+        }
+        #div3{
+            height: 400px;
+            margin-left: 600px;
+            margin-top: -730px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 50px;
+            background-color:white;
+        }
+        .pay {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px auto;
+            margin-right: 550px;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+        .feature-item {
+            text-align: center;
+            width: 200px;
+            
+        }
+        .icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 20px;
+            background-color: white;
+            border: 2px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .icon img {
+            max-width: 60%;
+            max-height: 60%;
+        }
+        .yellow {
+            background-color: #ffd36f;
+        }
+        .blue {
+            background-color: #57d1c9;
+        }
+        .light-blue {
+            background-color: #6ec6ff;
+        }
+        .orange {
+            background-color: #ff9f7f;
+        }
+        .ppp {
+            margin-left: 50px;
+            margin-bottom: -60px;
+        }
+        .h3{
+            
+            font-size: 15px;
+            margin-left: 5px;
+            color: black; /* Default color */
+            transition: color 0.3s; /* Smooth transition effect */
+        }
+        
+        .h3:hover
+        {
+            color: purple; /* Change color on hover */
+        }
+
+        .cs
+        {
+             display: inline-block; /* Met tout sur la même ligne */
+             vertical-align: middle; /* Aligne verticalement l'image et le texte */
+           
+        }
+
+        .cs img
+        {
+            vertical-align: middle; /* Aligner l'image au centre verticalement */
+            margin-right: 10px; /* Ajouter un petit espace entre l'image et le texte */
+        }
+
+        .cs span
+        {
+            vertical-align: middle; /* Aligner le texte au centre verticalement */
+            font-size: 18px; /* Vous pouvez ajuster la taille du texte ici */
+        }
+        #play-button
+        {
+            position: absolute;
+            margin-top: -40vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: purple;
+            background-color: white; /* Fond semi-transparent */
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Effet de transition au survol */
+        }
+
+        #play-button:hover
+        {
+            background-color: purple; /* Change la couleur du fond au survol */
+            color: white;
+        }
+        /* Ajoutez du style pour activer le défilement en douceur */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+
+        /* Pour les écrans de moins de 600px */
+        @media (max-width: 600px) {
+        body {
+             font-size: 14px; /* Réduit la taille de la police */
+        }
+       }
+      /* Pour les écrans de 600px à 900px */
+        @media (min-width: 600px) and (max-width: 900px) {
+        .container {
+              flex-direction: row; /* Aligne les éléments en ligne */
+            }
+        }
+
+        /* Pour les écrans de plus de 900px */
+        @media (min-width: 900px) {
+        .container {
+              flex-direction: column; /* Aligne les éléments en colonne */
+            }
+        }
+
+
+        .menu , #register{
+            display: flex;/*aligne les elements du menu horizontalement*/
+        }
+
+        .menu li , #register{
+            padding-left: 20px ;/*met l'espacement entre les elements du menu*/
+}
+
+.menu li a , #register{
+    display: inline-block;
+    text-decoration: none;
+    color:var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    /*text-transform: uppercase;*/
+    margin-left:50px;
+    margin-top: 30px;
+}
+
+.menu li a ::after{
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transform: 0.15s ease-in-out;
+}
+
+.menu li a:hover:after{
+    width: 100%;
+}
+
+/*.open-menu , .close-menu{
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.open-menu{
+    top: 50%;
+    right: 20px;/*ramene l'element a droite
+    transform: translateY(-50%);
+}
+
+.close-menu{
+    top: 20%;
+    right: 20px;
+}*/
+
+#check{
+    display: none;
+}
+
+@media(max-width: 600px){
+    .menu{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        color: black;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: white;
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li{
+        margin-top: 40px;/*espacement des elements*/
+    }
+    .menu li a{
+        padding: 10px;
+    }
+    
+    }
+    /*.open-menu, .close-menu{
+        display: block;
+    }
+    #check:checked ~ .menu{
+        right: 0  ;
+    }*/
+    .navbar{
+    width: 100%;
+    display:flex ;/*deplace le 2em element a droite du premier et le 3em a la fin*/
+    justify-content: space-between;/*met le meme espace entre ces elements*/
+    align-items: center;
+    list-style: none;/*Enleve les puces des elements de la liste*/
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+        }
+  
+        #container {
+            width: 200%; /* Largeur du conteneur */
+            overflow: hidden; /* Masque le contenu débordant */
+            position: relative;
+            background-color: white;
+        }
+
+        #scrolling-paragraphs {
+            display: flex; /* Disposition en ligne */
+            transition: transform 1s ease; /* Transition douce lors du défilement */
+            width: 300%; /* Assurez-vous que ce soit suffisamment large pour contenir tous les paragraphes */
+        }
+
+        .pap {
+            min-width: 100%; /* Chaque paragraphe occupe toute la largeur du conteneur */
+            margin: 0; /* Supprime les marges */
+            padding: 20px; /* Ajoute un peu de padding */
+            background-color: #f0f0f0; /* Fond léger */
+            border: 1px solid #ccc; /* Bordure pour la séparation */
+            
+        }
+        .progress-bar {
+            width: 100%; /* Largeur de la barre */
+            height: 5px; /* Hauteur de la barre */
+            background-color: violet; /* Couleur de la barre */
+            position: absolute; /* Positionnement en absolu pour le placer au-dessus */
+            top: 0; /* Positionnement en haut */
+            transition: width 3s ease; /* Transition douce pour l'effet de défilement */
+        }
+
+        @media(max-width: 600px){
+            .page-contain{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page-content">
+    <!---HEADER-->
+    <header>
+        
+        <!---NAVBAR--->
+        <input type="checkbox" id="check">
+                <li class="logo"><a href="#"><img src="i1.svg" alt="Logo" title="Logo Startup" class="im1"></a></li>
+            <ul class="navbar">
+                <span class="menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#section2" >Services</a></li>
+                <li><a href="#section5">Testimonial</a></li>
+                <li><a href="#section7" >News</a></li>
+                <a href="#" id="register">Register Now</a>
+                <!--label for="check" class="close-menu"><i class="fas fa-times"></i></label-->
+            </span>
+                <!--label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div-->
+    
+    </header>
+
+    <!---PREMIERE SECTION-->
+    <section style="margin-top: 150px;">
+        <p class="pp">Great software is <br>built with amazing<br>developers</p><br>
+        <p class="p2">We help build and manage a team of world-class<br><br>developers to bring your vision to life</p><br>
+        <form>
+            <input type="text" name="SN" id="SN" placeholder="Subscribe to newsletter">
+            <input type="button" value="Subscribe" id="button">
+        </form>
+        <img src="banner.png" class="banner">
+
+        <p id="ppp">Sponsored by:</p>
+        <div class="pay">
+            <img src="g.png" alt="">
+            <img src="p.png" alt="">
+            <img src="d.png" alt="">
+        </div>
+    </section>
+
+    <!---DEUXIEME SECTION-->
+    <section style="margin-top: 100px;" id="section2" >
+        <div class="div1">
+            <p class="qf">Quality features</p><br>
+            <p class="mef">Meet exciting feature of app</p><br><br><br><br>
+        </div>
+        <div class="features">
+            <div class="feature-item">
+                <div class="icon yellow"><img src="t1.svg" alt="Customization Icon"></div>
+                <h4>Unlimited Customization</h4>
+                <p>Get your blood tests delivered at home collect a sample from the your blood tests.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon blue"><img src="t2.svg" alt="Vector Icon"></div>
+                <h4>Vector shape & resizable</h4>
+                <p>Get your blood tests delivered at home collect a sample from the your blood tests.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon light-blue"><img src="t3.svg" alt="Editing Icon"></div>
+                <h4>Editing freedom</h4>
+                <p>Get your blood tests delivered at home collect a sample from the your blood tests.</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon orange"><img src="t4.svg" alt="Award Icon"></div>
+                <h4>Best Award history</h4>
+                <p>Get your blood tests delivered at home collect a sample from the your blood tests.</p>
+            </div>
+        </div>
+    </section>
+
+    <!---Troisieme SECTION-->
+    <section id="sec3">
+        <img src="boost.png" style="height: 650px;margin-top: 100px;">
+        <div id="div3">
+            <p class="pp">Boost your agencies by choosing <br>Ninja Developers</p><br>
+            <p class="p2">Create custom landing pages with Shades that convert more<br><br>visitors than any website, no coding required.</p>
+            <br>
+            <ul>
+                <li style="margin-left: 50px;"><span>&#x2714 </span> Unlimited design possibility</li><br>
+                <li style="margin-left: 50px;"><span>&#x2714 </span> Completely responsive features</li><br>
+                <li style="margin-left: 50px;"><span>&#x2714 </span> Easy to customize plugins</li><br>
+            </ul>
+            
+            <br><a href="" style="text-decoration: none; color: purple; font-weight: bold;font-size: 20px; margin-left: 50px;">Learn more ></a>
+        </div>
+    </section>
+
+    <!---Quatrieme SECTION-->
+    <section style="margin-top: 100px;">
+        <div style="text-align: center;">
+            <p class="pp">Leading companies trust us<br>
+                to develop software</p><br>
+            <p class="p2">We believe it’s important for everyone to have access to software<br>
+                especially when it comes to digital learning be navigate.</p><br>
+            <a href="" style="text-decoration: none; color: purple; font-weight: bold;font-size: 15px;">Explore details ></a><br>
+            <br><br><img src="Vid.png" alt="" style="height: 450px;">
+            <div id="play-button">&#9658;</div> <!-- Bouton Play avec un symbole Unicode -->
+
+        </div>
+    </section>
+
+    <!---Cinquieme  SECTION-->
+    <section style="margin-top: 100px;" id="section5">
+        <div>
+            <h4 style="color: purple;text-align: center; font-size: 20px;">Customer Comments</h4><br>
+            <h2 style="text-align: center;font-size: 40px;">Why customers love us</h2><br><br><br>
+        </div>
+
+        <!--div id="container">
+            <div id="scrolling-paragraphs">
+                <p class="pap"> Lorem ipsum dolor sit amet, consectetur adipiscing <br>dbchbhnKEYDBVDKCN DSJLuvelit.</p>
+                <p class="pap"> Sed do eiusmod tempor incididunt ut labore et <br>bkdb jcb sdjkvhujvdolore magna aliqua.</p>
+                <p class="pap"> Ut enim ad minim veniam, quis nostrud exercitation <br>bcdsjklcjscyuhecnjleljhullamco laboris.</p>
+            </div>
+        </div-->
+
+        <br><br><br> <div class="cc">
+            <div style="display: flex; justify-content: center;">
+
+                <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px; display: flex; align-items: center; " class="comment">
+                    <img src="v1.png" alt="" style="width: 20%; margin-right: 20px;">
+                    <div>
+                        <h3>Pierre Hackett</h3>
+                        <h5>VP of Engineering</h5>
+                    </div>
+                </div>
+            
+                <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px; display: flex; align-items: center;" >
+                    
+                    <img src="v2.png" alt="" style="width: 20%; margin-right: 20px;">
+                    <div>
+                        <h3>Natalia Sanz</h3>
+                        <h5>Head of Technology</h5>
+                    </div>
+                </div>
+            
+                <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px; display: flex; align-items: center;">
+                    
+                    <img src="v3.png" alt="" style="width: 20%; margin-right: 20px;">
+                    <div>
+                        <h3>Ece Akman</h3>
+                        <h5>Senior Marketer</h5>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+
+    </section>
+
+
+    <!---Sixieme SECTION-->
+    <section style="margin-top: 100px;" >
+
+        <br><p class="pp">Free Customer Support to <br>ensure what you like to expect</p><br>
+        <p class="p2">We offer a risk-free trial period of up to two weeks. You will only<br><br>
+            have to pay if you are happy with the developer and wish to<br><br>
+            continue. If you are unsatisfied, we’ll refund payment or fix<br><br>
+            issues on our dime period customers.<br><br>If you are happy with the developer and wish to continue. If you<br><br>
+            are unsatisfied, we’ll refund payment or fix issues.</p><br>
+        <a href="" style="text-decoration: none; color: purple; font-weight: bold;font-size: 20px;margin-left: 50px;">Learn more ></a>
+        <img src="freeCos.png" style="margin-left: 650px; margin-top: -700px;">
+    </section>
+
+    <!---Septieme SECTION-->
+    <section style="margin-top: 150px; background-color: #f8f8f8; text-align: center;" id="section7">
+        <br><br><br>
+        <h4 style="color: purple;text-align: center;">Quality features</h4><br>
+        <h2 style="text-align: center;">Tutorials that people love most</h2><br><br><br>
+        <div style="display: flex; justify-content: center;">
+
+            <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px;">
+                <img src="d1.png" alt="" style="width: 100%;">
+                <a href="" style="text-decoration: none;">
+                    <h3 class="h3" style="font-size: 20px;"><br>How to work with prototype design<br>with adobe xd featuring tools</h3>
+                </a><br>
+                <img src="com.svg" alt="" style="margin-left: -170px;margin-bottom: -10px;">  <span style="font-size: 20px;" >22 comments</span>
+            </div>
+    
+            <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px;">
+                <img src="d2.png" alt="" style="width: 100%;">
+                <a href="" style="text-decoration: none;">
+                    <h3 class="h3" style="font-size: 20px;"><br>Create multiple artboards by using<br>figma prototyping development </h3>
+                </a><br>
+                <img src="com.svg" alt="" style="margin-left: -170px;margin-bottom: -10px;"> <span style="font-size: 20px;">15 comments</span><br><br>
+            </div>
+    
+            <div style="border: white solid 2px; background-color: white; width: 350px; margin-left: 20px;">
+                <img src="d3.png" alt="" style="width: 100%;">
+                <a href="" style="text-decoration: none;">
+                    <h3 class="h3" style="font-size: 20px;"><br>Convert your web layout theming<br>easily with sketch zeplin extension</h3>
+                </a><br>
+                <img src="com.svg" alt="" style="margin-left: -160px;margin-bottom: -10px;"> <span style="font-size: 20px;">12 comments</span>
+            </div><br>
+            <br><br><br>
+        </div>
+
+        <!---Huitieme SECTION-->
+        <section style="margin-top: 90px; background-color: #f8f8f8;">
+            <div style="border: #9b5eab solid 2px;  background-color: #9b5eab; height: 170px; border-radius: 15px 15px; width: 90%; margin: 0 auto;">
+                <h2 style="color: white; margin-top: 50px; text-align: left; margin-left: 100px;">Hire the world’s best developers<br><br>and designers around!</h2>
+                <a href="#" id="hd">HIRE DEVELOPERS</a>
+            </div>
+        </section>
+    </section>
+
+    
+    <br><br> <footer>
+        <img src="i1.svg" alt="Logo" title="Logo Startup" style="margin-right:180vh;">
+        <p style="margin-top: -5vh;">&copy; 2024 Startup, All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Ajout d'un événement au bouton pour rediriger vers une vidéo YouTube
+        document.getElementById("play-button").addEventListener("click", function() {
+            window.location.href = "https://youtu.be/Cm3U-NgJb9I?si=HMxE7Y9G1Qwcy4_G"; // Remplacez cette URL par celle de votre vidéo
+        });
+
+</script>
+
+<!--script >
+        const paragraphs = document.getElementById('scrolling-paragraphs');
+    const progressBar = document.getElementById('progress-bar');
+    let currentIndex = 0;
+
+    function scrollParagraphs() {
+        currentIndex++;
+        if (currentIndex >= paragraphs.children.length) {
+            currentIndex = 0; // Remet à zéro si on atteint la fin
+        }
+        // Calcule la position de défilement
+        const offset = -currentIndex * 200; // Chaque paragraphe a une largeur de 100%
+        paragraphs.style.transform = `translateX(${offset}%)`; // Applique la translation
+        progressBar.style.transition = 'none'; // Réinitialise la transition de la barre
+        progressBar.style.width = '0'; // Réinitialise la largeur de la barre
+        setTimeout(() => {
+            progressBar.style.transition = 'width 3s ease'; // Réactive la transition
+            progressBar.style.width = '100%'; // Remplit la barre sur 3 secondes
+        }, 50); // Légère pause pour s'assurer que la réinitialisation est visible
+    }
+
+    setInterval(scrollParagraphs, 3000); // Appelle la fonction toutes les 3 secondes
+    </script-->
+</div>
+</body>
+</html>
+
+    
